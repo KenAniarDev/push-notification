@@ -7,7 +7,7 @@
 </head>
 <body>
     <button onclick="subscribe()">Subscribe</button>
-
+    <span id="endpoint"></span>
     <script>
         addEventListener('load', async () => {
             let sw = navigator.serviceWorker.register('./sw.js');
@@ -20,8 +20,9 @@
                 userVisibleOnly: true,
                 applicationServerKey: 'BEPhqyrlYjipHTVF96wkSmTDUO8dT5ZWUrvkab8pBGRjNfGtYVAv4tIrGm91ugwXxJQaZVTPt6bs0Oupg6_8G7Q',
             });
-            console.log(JSON.stringify(push));
+            document.getElementById("endpoint").val = JSON.stringify(push);
         }
     </script>
 </body>
 </html>
+<script src="push.js"></script>
